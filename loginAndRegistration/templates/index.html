@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+
+	<form method="POST" action='/register'>
+		Email: <input type="text" name="email"><br>
+		First Name: <input type="textarea" name="fname"><br>
+		Last Name: <input type="textarea" name="lname"><br>
+		Password: <input type="password" name="pw"><br>
+		Confirm Password: <input type="password" name="pwconfirm"><br>
+		<input type="submit" name="">
+	</form>
+	<br><br>
+	<form method="POST" action='/login'>
+		Email: <input type="text" name="email"><br>
+		Password: <input type="password" name="pw"><br>
+		<input type="submit" name="">
+	</form>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+</body>
+</html>
