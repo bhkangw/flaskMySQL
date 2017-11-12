@@ -1,0 +1,115 @@
+* {
+	vertical-align: baseline; 	
+	font-weight: inherit; 	
+	font-family: sans-serif; 	
+	font-style: inherit; 	
+	font-size: 100%; 	
+	border: 0 none; 	
+	outline: 0; 	
+	padding: 0; 	
+	margin: 0; 	
+}
+
+.wrapper{
+	width: 999px;
+	background-color: #eeeeee;
+	height: 1500px;
+	overflow: scroll;
+}
+
+.header{
+	height: 50px;
+	width: 979px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: thick solid black;
+}
+
+h2, h3{
+	display: inline-block;
+	color: black;
+	margin-top: 10px;
+	vertical-align: top;
+	font-size: 25px;
+}
+
+h3{
+	margin-left: 550px;
+	margin-top: 13px;
+	font-size: 20px
+}
+
+.logoff{
+	margin-left: 10px;
+}
+
+.body{
+	padding-left: 50px;
+	padding-top: 50px;
+}
+
+.addmessage{
+	margin-left: 700px;
+}
+
+.newmessage{
+
+}
+
+.addcomment{
+	margin-left: 100px;
+	margin-bottom: 40px;
+}
+
+.newcomment{
+	margin-left: 100px;
+}
+
+textarea{
+	overflow: scroll;
+	border: 2px solid black;
+}
+
+input{
+	border: 1px solid black;
+	margin-top: 5px;
+}
+
+.index{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+h1{
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

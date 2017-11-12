@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Wall</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	<div class="wrapper">
+
+		<div class="header">
+			<h2>CodingDojo Wall</h2>
+			<h3>Welcome {{session['name']}}!</h3>
+			<a class="logoff" href="/logout">log off</a>
+		</div>
+
+		<div class="body">
+			<h4>Post a message</h4>
+			<form action="/addmessage" method="POST">
+				<TEXTAREA name="message" rows=4 cols=100></TEXTAREA><br>
+				<input class="addmessage" type="submit" value="Post a Message!" name="post">
+			</form>
+
+			<div class="messages">
+				
+				{% for message in messages | reverse %} <!-- messages box -->
+					<p class="newmessage">{{message.first_name}} {{message.last_name}} - {{message.created_at.strftime('%b %d %Y')}}</p>
+					<p class="newmessage">{{message.message}}</p><br>
+					
+					{% for comment in comments %} <!-- displaying comment text under the specific message -->
+						{% if comment.message_id == message.id %} <!-- should only display message where the comment.id matches the message.id -->
+							<p class="newcomment">{{comment.first_name}} {{comment.last_name}} - {{comment.created_at.strftime('%b %d %Y')}}</p>
+							<p class="newcomment">{{comment.comment}}</p><br>
+						{% endif %}
+					{% endfor%}
+
+					<h4 class="newcomment">Post a comment</h4>
+					<form class="addcomment" action="/addcomment" method="POST"> <!-- comment box within the messages box -->
+						<TEXTAREA name="comment" rows=2 cols=80></TEXTAREA><br>
+						<input type="submit" value="Post a Comment!" name="post">
+						<input type="hidden" name="messageid" value="{{message.id}}">
+					</form>
+
+				{% endfor %}
+
+			</div>
+		</div>
+
+
+	</div>
+</body>
+</html>
