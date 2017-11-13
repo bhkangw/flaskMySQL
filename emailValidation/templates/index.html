@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+	<style type="text/css">
+		.red{
+			background-color: red;
+			color: white;
+			size: 20px;
+			display: inline-block;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p class="red">{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form action="/add_email" method="POST">
+		Email: <input type="text" name="email">
+<!-- 		Added: <input type="date" name="email_added">
+ -->		<input type="submit" name="submit">
+	</form>
+</body>
+</html>
