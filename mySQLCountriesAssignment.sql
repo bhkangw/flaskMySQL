@@ -19,7 +19,7 @@ GROUP BY countries.name;
 ORDER BY num_cities DESC;
 
 -- 3. What query would you run to get all the cities in Mexico with a population of greater than 500,000? 
--- Your query should arrange the result by population in descending order.(1)
+-- Your query should arrange the result by population in descending order (1)
 
 SELECT countries.name, cities.name, cities.population
 FROM countries
