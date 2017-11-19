@@ -18,7 +18,7 @@ ORDER BY users.first_name;
 -- final iteration with appropriate column renames
 SELECT users.first_name, users.last_name, users2.first_name as friend_first_name, users2.last_name as friend_last_name -- renaming the users2 columns
 FROM users
-LEFT JOIN friendships ON user_id = friendships.user_id -- joining the friendships table to the users table via user_id
+LEFT JOIN friendships ON user_id = friendships.user_id -- joining the friendships table to the users table via user id
 LEFT JOIN users AS users2 ON users2.id = friendships.friend_id -- joining the users table BACK to the friendships table by setting AS users2 and via friend_id
 ORDER BY users.first_name;
 
